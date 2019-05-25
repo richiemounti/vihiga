@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+<main class="container mt-4">
+    <h2>Posts</h2>    
+    <a href="{{ url_for('admin.new') }}" class="btn btn-link">Add New Posts</a>
+    {% if post_items %}
+        <table id="post_items" class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Post</th>
+                    <th scope="col">Edit</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    {% else %}
+        <p>We don't have any posts yet</p>
+    {% endif %}
+</main>
+{% endblock  %}

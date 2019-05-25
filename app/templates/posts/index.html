@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="..." class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+    <div class="container">
+         <!-- Content here -->
+        {% if posts_items %}
+            <div id = "post_items" class="row">
+                {% for post_item in posts_items %}
+                    {% include '/posts/_posts.html' %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <p> No posts found</p>
+        {% endif %}
+    </div>
+{% endblock  %}
